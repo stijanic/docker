@@ -1,1 +1,1 @@
-release: chmod u+x configure
+web: chmod u+x configure
