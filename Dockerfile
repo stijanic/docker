@@ -21,6 +21,7 @@
 # sudo heroku login
 # sudo heroku apps:destroy -a stijanic-stijanic-docker --confirm stijanic-stijanic-docker
 # sudo heroku apps:create stijanic-stijanic-docker
+# sudo heroku container:login
 # sudo heroku container:push web -a stijanic-stijanic-docker
 # sudo heroku container:release web -a stijanic-stijanic-docker
 # sudo heroku logs --tail -a stijanic-stijanic-docker
