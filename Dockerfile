@@ -17,7 +17,8 @@
 
 FROM node:12.16.3
 
-RUN useradd -rm -d /home/stijanic -s /bin/bash -g root -G sudo -u 1001 stijanic
+RUN groupadd -g 1001 stijanic
+RUN useradd -rm -d /home/stijanic -s /bin/bash -g stijanic -G root,sudo -u 1001 stijanic
 
 USER stijanic
 
