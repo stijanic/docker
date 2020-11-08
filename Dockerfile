@@ -1,10 +1,18 @@
 # sudo docker build --tag stijanic .
 # sudo docker run -p 8080:80 --name stijanic -d stijanic
 # sudo docker ps -a
-# sudo docker stop stijanic
+# sudo docker logs stijanic
+# sudo docker stop stijanic # sudo docker start stijanic
 # sudo docker rm stijanic
 # sudo docker images
-# sudo docker rmi $(sudo docker images | grep stijanic | awk '{ print $3 }')
+# sudo docker rmi stijanic
+
+# sudo docker login
+# sudo docker tag stijanic stijanic/stijanic
+# sudo docker push stijanic/stijanic
+# sudo docker rmi stijanic/stijanic
+# sudo docker pull stijanic/stijanic
+# sudo docker logout
 
 FROM node:12.16.3
 

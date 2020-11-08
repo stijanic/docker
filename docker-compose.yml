@@ -1,0 +1,16 @@
+# cp -pr stijanic ~/tmp
+# cd ~/tmp/stijanic
+# sudo docker-compose up -d
+# sudo docker-compose down
+# sudo docker-compose ps -a
+
+version: '2'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web
+    ports:
+      - "8080:80"
