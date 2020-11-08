@@ -1,3 +1,8 @@
+# heroku stack:set container
+# git push heroku master
+# heroku ps
+# heroku ps:scale web=1
+
 build:
   docker:
     web: Dockerfile
