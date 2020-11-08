@@ -4,6 +4,7 @@
 # sudo docker-compose build
 # sudo docker-compose down
 # sudo docker-compose ps -a
+# sudo heroku login
 # sudo heroku container:push web -a stijanic-docker
 # sudo heroku container:release web -a stijanic-docker
 # sudo heroku logs --tail -a stijanic-docker
@@ -17,4 +18,4 @@ services:
       dockerfile: Dockerfile
     container_name: web
     ports:
-      - "8080:80"
+      - "8080:8080"

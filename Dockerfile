@@ -17,14 +17,18 @@
 
 FROM node:12.16.3
 
-WORKDIR /code
+RUN useradd -rm -d /home/stijanic -s /bin/bash -g root -G sudo -u 1001 stijanic
 
-ENV PORT 80
+USER stijanic
 
-EXPOSE 80
+WORKDIR /home/stijanic
 
-COPY . /code
+ENV PORT 8080
+
+EXPOSE 8080
+
+COPY . /home/stijanic
 
 RUN npm install
 
-CMD ["node", "node.js/4.2.4/_Node.js/learnyounode/http-json-api-server.js", "80"]
+CMD ["node", "node.js/4.2.4/_Node.js/learnyounode/http-json-api-server.js", "8080"]
