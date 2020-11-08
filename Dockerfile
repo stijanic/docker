@@ -27,7 +27,7 @@ ENV PORT 8080
 
 EXPOSE 8080
 
-COPY . /home/stijanic
+COPY --chown=stijanic:stijanic . /home/stijanic
 
 RUN npm install
 
