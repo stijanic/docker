@@ -29,7 +29,9 @@ var server = http.createServer(function (req, res) {
 	} else if (parsedUrl.pathname == "/api/unixtime") {
 	//} else if (/^\/api\/unixtime/.test(req.url)) {
 		result = unixtime(time);
-	};
+	} else {
+    result = "Hello Wee!!!";
+  };
 
 	if (result) {
 		res.writeHead(200, { 'Content-Type': 'application/json' });
