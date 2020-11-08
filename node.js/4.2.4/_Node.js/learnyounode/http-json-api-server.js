@@ -28,7 +28,7 @@ var server = http.createServer(function (req, res) {
 		result = parsetime(time);
 	} else if (parsedUrl.pathname == "/api/unixtime") {
 	//} else if (/^\/api\/unixtime/.test(req.url)) {
-		result = unixtime(time);		
+		result = unixtime(time);
 	};
 
 	if (result) {
@@ -40,4 +40,4 @@ var server = http.createServer(function (req, res) {
 	};
 });
 
-server.listen(Number(process.argv[2]));
+server.listen(process.env.PORT || Number(process.argv[2]));

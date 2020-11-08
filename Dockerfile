@@ -12,6 +12,7 @@
 # sudo docker push stijanic/stijanic
 # sudo docker rmi stijanic/stijanic
 # sudo docker pull stijanic/stijanic
+# sudo docker tag stijanic/stijanic stijanic_web
 # sudo docker logout
 
 FROM node:12.16.3
@@ -20,8 +21,10 @@ WORKDIR /code
 
 ENV PORT 80
 
+EXPOSE 80
+
 COPY . /code
 
 RUN npm install
 
-CMD ["node", "node.js/4.2.4/_Node.js/learnyounode/time-server.js", "80"]
+CMD ["node", "node.js/4.2.4/_Node.js/learnyounode/http-json-api-server.js", "80"]
