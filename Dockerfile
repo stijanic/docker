@@ -18,6 +18,7 @@
 FROM node:12.16.3
 
 RUN groupadd -g 1001 stijanic
+
 RUN useradd -rm -d /home/stijanic -s /bin/bash -g stijanic -G root,sudo -u 1001 stijanic
 
 USER stijanic
@@ -29,6 +30,10 @@ ENV PORT 8080
 EXPOSE 8080
 
 COPY --chown=stijanic:stijanic . /home/stijanic
+
+RUN apt-get install -y \
+		ruby \
+		php7.4-cli
 
 RUN npm install
 
