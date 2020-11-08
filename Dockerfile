@@ -29,11 +29,11 @@
 
 FROM node:12.16.3
 
-# RUN \
-#  apt-get update && \
-#  apt-get install -y ruby && \
-#	apt-get install -y php && \
-#	apt-get install -y vim
+RUN \
+  apt-get update && \
+  apt-get install -y ruby && \
+	apt-get install -y php && \
+	apt-get install -y vim
 
 RUN groupadd -g 1001 stijanic
 
