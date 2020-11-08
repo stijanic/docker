@@ -30,7 +30,7 @@ var server = http.createServer(function (req, res) {
 	//} else if (/^\/api\/unixtime/.test(req.url)) {
 		result = unixtime(time);
 	} else {
-    result = "Hello Wee!!!";
+    result = "/api/parsetime?iso=2013-08-10T12:43:15.474Z || /api/unixtime?iso=2013-08-10T12:43:15.474Z";
   };
 
 	if (result) {
