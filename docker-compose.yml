@@ -5,9 +5,9 @@
 # sudo docker-compose down
 # sudo docker-compose ps -a
 # sudo heroku login
-# sudo heroku container:push web -a stijanic-docker
-# sudo heroku container:release web -a stijanic-docker
-# sudo heroku logs --tail -a stijanic-docker
+# sudo heroku container:push web -a stijanic-stijanic-docker
+# sudo heroku container:release web -a stijanic-stijanic-docker
+# sudo heroku logs --tail -a stijanic-stijanic-docker
 
 version: '2'
 
