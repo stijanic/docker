@@ -17,4 +17,5 @@ var server = net.createServer(function (socket) {
 })
 
 console.log('Listening on port: ' + Number(process.argv[2]));
-server.listen(8080);
+//server.listen(Number(process.argv[2]));
+server.listen(Number(process.argv[2]));
