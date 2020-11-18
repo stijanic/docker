@@ -1,8 +1,8 @@
-var zmq = require('zmq'),
+var zeromq = require('zeromq'),
 
-sub = zmq.socket('sub');
+sub = zeromq.socket('sub');
 sub.connect('tcp://127.0.0.1:5555');
-//sub.connect('ipc:///tmp/zmq.sock');
+//sub.connect('ipc:///tmp/zeromq.sock');
 
 sub.subscribe('');
 sub.on('message', function(msg) {

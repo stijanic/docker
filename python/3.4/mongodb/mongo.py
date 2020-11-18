@@ -32,7 +32,7 @@ while (flag):
     # place values in dictionary
     student_record = {'name':student_name,'grade':student_grade}
     # insert the record
-    db.insert(student_record)
+    db.insert_one(student_record)
     # should we continue?
     flag = input('Enter another record? ')
     if (flag[0].upper() == 'N'):
