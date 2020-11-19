@@ -1,13 +1,13 @@
-# cp -pr stijanic ~/tmp
-# cd ~/tmp/stijanic
+# cp -pr Docker ~/tmp/docker
+# cd ~/tmp/docker
 
 # sudo docker build --tag stijanic .
-# sudo docker run -p 8080:80 --name stijanic -d stijanic
-# sudo docker logs stijanic
+# sudo docker run -p 8080:8080 --name web -d stijanic
+# sudo docker logs web
 # sudo docker exec -it web bash
-# sudo docker start stijanic
-# sudo docker stop stijanic
-# sudo docker rm stijanic
+# sudo docker start web
+# sudo docker stop web
+# sudo docker rm web
 # sudo docker ps -a
 # sudo docker images
 # sudo docker rmi stijanic
@@ -15,7 +15,7 @@
 # sudo docker login
 # sudo docker push stijanic/docker
 # sudo docker pull stijanic/docker
-# sudo docker tag stijanic/docker stijanic_web
+# sudo docker tag web stijanic/docker
 # sudo docker logout
 
 # sudo heroku login
@@ -33,11 +33,12 @@ RUN \
   apt-get update && \
   apt-get install -y ruby && \
   apt-get install -y php && \
-  apt-get install -y vim
+  apt-get install -y vim && \
+  apt-get install -y sudo
 
 RUN groupadd -g 1001 stijanic
 
-RUN useradd -rm -d /home/stijanic -s /bin/bash -g stijanic -G root,sudo -u 1001 stijanic
+RUN useradd -rm -d /home/stijanic -s /bin/bash -g stijanic -G root,sudo -u 1001 -p wyc60ExwcvnTA stijanic
 
 USER stijanic
 
