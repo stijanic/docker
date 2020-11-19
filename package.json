@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stijanic/stijanic.git"
+    "url": "git+https://github.com/stijanic/docker.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/stijanic/stijanic/issues"
+    "url": "https://github.com/stijanic/docker/issues"
   },
-  "homepage": "https://github.com/stijanic/stijanic#readme"
+  "homepage": "https://github.com/stijanic/docker#readme"
 }
