@@ -25,6 +25,7 @@
 # sudo heroku container:push web -a stijanic-docker
 # sudo heroku container:release web -a stijanic-docker
 # sudo heroku logs --tail -a stijanic-docker
+# sudo heroku run bash
 # sudo heroku logout
 
 FROM node:12.16.3
