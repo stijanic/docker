@@ -17,8 +17,8 @@ client1.on("subscribe", function (channel, count) {
 client1.on("unsubscribe", function (channel, count) {
     console.log("client1 unsubscribed from " + channel + ", " + count + " total subscriptions");
     if (count === 0) {
-        client2.end();
-        client1.end();
+        client2.end(true);
+        client1.end(true);
     }
 });
 
