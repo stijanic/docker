@@ -1,16 +1,10 @@
 /**
 * Connecting to MongoDB with Mongoose
 */
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 // simple connection string
 // mongoose.connect('mongodb://localhost/test');
-  mongoose.connect('mongodb://localhost/test', {
-  db: { native_parser: false },
-  server: { poolSize: 1 },
-  // replset: { rs_name : 'myReplicaSetName' },
-  user: 'root'
-  //pass: 'test'
-});
+mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
 
 // using authentication
 // mongoose.connect('mongodb://username:password@host/collection')
