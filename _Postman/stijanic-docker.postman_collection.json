@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "bbb45bce-7363-4763-82d1-98db623b3e27",
+		"name": "stijanic-docker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Parsetime",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3c6e7331-08ec-461f-a24f-f9eb32ccac9d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://stijanic-docker.herokuapp.com/api/parsetime?iso=2013-08-10T12:43:15.474Z",
+					"protocol": "http",
+					"host": [
+						"stijanic-docker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"parsetime"
+					],
+					"query": [
+						{
+							"key": "iso",
+							"value": "2013-08-10T12:43:15.474Z"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unixtime",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d5b3c2a-db5e-4da3-8aff-bfdc4ab0800c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://stijanic-docker.herokuapp.com/api/unixtime?iso=2013-08-10T12:43:15.474Z",
+					"protocol": "http",
+					"host": [
+						"stijanic-docker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"unixtime"
+					],
+					"query": [
+						{
+							"key": "iso",
+							"value": "2013-08-10T12:43:15.474Z"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
