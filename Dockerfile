@@ -63,6 +63,8 @@ COPY --chown=stijanic:stijanic . /home/stijanic
 
 RUN GEM_HOME=./.gems gem install 'ffi-rzmq'
 
+RUN echo "GEM_HOME=./.gems" >> ~/.profile
+
 RUN pip3 install zmq
 
 RUN npm install
