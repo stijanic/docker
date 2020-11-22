@@ -28,14 +28,24 @@
 # sudo heroku run bash
 # sudo heroku logout
 
-FROM node:12.16.3
+FROM ubuntu:20.04
+
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=Europe/Belgrade
 
 RUN \
   apt-get update && \
+  apt-get install -y tzdata && \
   apt-get install -y ruby && \
+  apt-get install -y ruby-dev && \
+  apt-get install -y libzmq3-dev && \
   apt-get install -y php && \
-  apt-get install -y vim && \
-  apt-get install -y sudo
+  apt-get install -y python3 && \
+  apt-get install -y python3-pip && \
+  apt-get install -y python-is-python3 && \
+  apt-get install -y nodejs && \
+  apt-get install -y npm && \
+  apt-get install -y vim
 
 RUN groupadd -g 1001 stijanic
 
@@ -50,6 +60,10 @@ ENV PORT 8080
 EXPOSE 8080
 
 COPY --chown=stijanic:stijanic . /home/stijanic
+
+RUN GEM_HOME=./.gems gem install 'ffi-rzmq'
+
+RUN pip3 install zmq
 
 RUN npm install
 

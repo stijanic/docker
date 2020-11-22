@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/stijanic/docker/issues"
   },
-  "homepage": "https://github.com/stijanic/docker#readme"
+  "homepage": "https://github.com/stijanic/docker#readme",
+  "dependencies": {
+    "zeromq": "5"
+  }
 }
