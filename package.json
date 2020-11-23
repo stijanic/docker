@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/stijanic/docker#readme",
   "dependencies": {
-    "zeromq": "5"
+    "zeromq": "5.2.0",
+    "mongoose": "5.10.15",
+    "mysql": "2.18.1",
+    "pg": "8.3.3",
+    "redis": "3.0.2"
   }
 }

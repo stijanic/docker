@@ -40,16 +40,17 @@ RUN \
   apt-get install -y ruby-dev && \
   apt-get install -y libzmq3-dev && \
   apt-get install -y php && \
+  apt-get install -y composer && \
   apt-get install -y python3 && \
-  apt-get install -y python3-pip && \
   apt-get install -y python-is-python3 && \
+  apt-get install -y python3-pip && \
   apt-get install -y nodejs && \
   apt-get install -y npm && \
   apt-get install -y vim
 
 RUN groupadd -g 1001 stijanic
 
-RUN useradd -rm -d /home/stijanic -s /bin/bash -g stijanic -G root,sudo -u 1001 -p wyc60ExwcvnTA stijanic
+RUN useradd -rm -d /home/stijanic -s /bin/bash -g stijanic -u 1001 -p wyc60ExwcvnTA stijanic
 
 USER stijanic
 
@@ -61,11 +62,16 @@ EXPOSE 8080
 
 COPY --chown=stijanic:stijanic . /home/stijanic
 
-RUN GEM_HOME=./.gems gem install 'ffi-rzmq'
+RUN composer install
 
-RUN echo "GEM_HOME=./.gems" >> ~/.profile
+RUN export GEM_HOME=$HOME/.gems
+RUN gem install bundle
+RUN export PATH=$PATH:$HOME/.gems/bin
+RUN bundle install
+RUN echo "export PATH=$PATH:$HOME/.gems/bin" >> ~/.profile
+RUN echo "export GEM_HOME=$HOME/.gems" >> ~/.profile
 
-RUN pip3 install zmq
+RUN pip3 install -r requirements.txt
 
 RUN npm install
 
