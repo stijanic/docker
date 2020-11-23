@@ -64,10 +64,8 @@ COPY --chown=stijanic:stijanic . /home/stijanic
 
 RUN composer install
 
-RUN export GEM_HOME=$HOME/.gems
-RUN gem install bundler
-RUN export PATH=$PATH:$HOME/.gems/bin
-RUN bundler install
+RUN GEM_HOME=$HOME/.gems gem install bundler
+RUN GEM_HOME=$HOME/.gems bundler install
 RUN echo "export PATH=$PATH:$HOME/.gems/bin" >> ~/.profile
 RUN echo "export GEM_HOME=$HOME/.gems" >> ~/.profile
 
