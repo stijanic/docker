@@ -1,14 +1,16 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    bson (4.11.1)
+    bson (1.5.0)
     ffi (1.13.1)
     ffi-rzmq (2.0.7)
       ffi-rzmq-core (>= 1.0.7)
     ffi-rzmq-core (1.0.7)
       ffi
-    mongo (2.13.1)
-      bson (>= 4.8.2, < 5.0.0)
+    mongo (1.5.0)
+      bson (= 1.5.0)
+    mongodb (2.1.0)
+      mongo (~> 1.5)
     mysql2 (0.5.3)
     pg (1.2.3)
     redis (4.2.5)
@@ -18,7 +20,8 @@ PLATFORMS
 
 DEPENDENCIES
   ffi-rzmq (= 2.0.7)
-  mongo (= 2.13.1)
+  mongo (= 1.5)
+  mongodb (= 2.1.0)
   mysql2 (= 0.5.3)
   pg (= 1.2.3)
   redis (= 4.2.5)

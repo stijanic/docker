@@ -46,7 +46,10 @@ RUN \
   apt-get install -y python3-pip && \
   apt-get install -y nodejs && \
   apt-get install -y npm && \
-  apt-get install -y vim
+  apt-get install -y vim && \
+  apt-get install -y libmysqlclient-dev && \
+  apt-get install -y libpq-dev
+
 
 RUN groupadd -g 1001 stijanic
 
@@ -65,9 +68,9 @@ COPY --chown=stijanic:stijanic . /home/stijanic
 RUN composer install
 
 RUN GEM_HOME=$HOME/.gems gem install bundler
-#RUN GEM_HOME=$HOME/.gems $HOME/.gems/bin/bundler install
-RUN echo "export PATH=$PATH:$HOME/.gems/bin" >> ~/.profile
-RUN echo "export GEM_HOME=$HOME/.gems" >> ~/.profile
+RUN GEM_HOME=$HOME/.gems $HOME/.gems/bin/bundler install
+RUN echo "export PATH=$PATH:$HOME/.gems/bin" >> ~/.bashrc
+RUN echo "export GEM_HOME=$HOME/.gems" >> ~/.bashrc
 
 RUN pip3 install -r requirements.txt
 

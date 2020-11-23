@@ -1,8 +1,10 @@
 {
-    "config": {
-      "vendor-dir": "/home/stijanic/.vendor"
-    },
-    "require": {
+  "name": "stijanic/test",
+  "description": "Test",
+  "config": {
+    "vendor-dir": "/home/stijanic/.vendor"
+  },
+  "require": {
     "myqee/database-mysqli": "4.1.2",
     "myqee/database-mongodb": "4.2.4",
     "doctrine/cache": "1.10.2",
