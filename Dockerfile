@@ -74,6 +74,7 @@ RUN echo "export GEM_HOME=$HOME/.gems" >> ~/.bashrc
 
 RUN pip3 install -r requirements.txt
 
-RUN npm install
+RUN npm install pnpm
+RUN pnpm install
 
 CMD ["node", "node.js/4.2.4/_Node.js/learnyounode/http-json-api-server.js", "8080"]
