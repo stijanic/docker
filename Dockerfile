@@ -38,7 +38,6 @@ RUN \
   apt-get install -y tzdata && \
   apt-get install -y ruby && \
   apt-get install -y ruby-dev && \
-  apt-get install -y libzmq3-dev && \
   apt-get install -y php && \
   apt-get install -y composer && \
   apt-get install -y python3 && \
@@ -48,7 +47,8 @@ RUN \
   apt-get install -y npm && \
   apt-get install -y vim && \
   apt-get install -y libmysqlclient-dev && \
-  apt-get install -y libpq-dev
+  apt-get install -y libpq-dev && \
+  apt-get install -y libzmq3-dev
 
 
 RUN groupadd -g 1001 stijanic
@@ -65,16 +65,18 @@ EXPOSE 8080
 
 COPY --chown=stijanic:stijanic . /home/stijanic
 
-RUN composer install
-
 RUN GEM_HOME=$HOME/.gems gem install bundler
 RUN GEM_HOME=$HOME/.gems $HOME/.gems/bin/bundler install
-RUN echo "export PATH=$PATH:$HOME/.gems/bin" >> ~/.bashrc
 RUN echo "export GEM_HOME=$HOME/.gems" >> ~/.bashrc
+RUN echo "export PATH=$PATH:$GEM_HOME/bin" >> ~/.bashrc
+
+RUN composer install
 
 RUN pip3 install -r requirements.txt
 
 RUN npm install pnpm
-RUN pnpm install
+RUN $HOME/node_modules/.bin/pnpm install
+RUN echo "export NODE_PATH=$HOME/node_modules" >> ~/.bashrc
+RUN echo "export PATH=$PATH:$NODE_PATH/.bin" >> ~/.bashrc
 
 CMD ["node", "node.js/4.2.4/_Node.js/learnyounode/http-json-api-server.js", "8080"]
