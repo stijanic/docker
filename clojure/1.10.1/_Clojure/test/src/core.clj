@@ -4,6 +4,7 @@
 ;; C-x C-e - execute closure line
 ;; add dependency to project.clj then run 'lein deps'
 ;; M-x package-install (srefactor, elisp-format, elisp-lint)
+;; M-x magit-status (? - help)
 
 ;; namespace
 (ns core 
