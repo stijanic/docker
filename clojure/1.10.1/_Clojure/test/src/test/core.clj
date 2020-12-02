@@ -1,3 +1,4 @@
+;;
 ;; M-x customize-themes - change emacs theme
 ;; M-x cider-jack-in - start REPL
 ;; C-c C-k - run clojure programme
@@ -9,8 +10,8 @@
 ;; ---------------------------
 ;; namespace
 ;; ---------------------------
-(ns core 
-  (:require [clojure.string :as string]) 
+(ns test.core
+  (:require [clojure.string :as string])
   (:gen-class))
 ;; ---------------------------
 

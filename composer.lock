@@ -86,6 +86,10 @@
                 "redis",
                 "xcache"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/cache/issues",
+                "source": "https://github.com/doctrine/cache/tree/1.10.x"
+            },
             "funding": [
                 {
                     "url": "https://www.doctrine-project.org/sponsorship.html",
@@ -142,6 +146,10 @@
                 "MyQEE",
                 "database"
             ],
+            "support": {
+                "issues": "https://github.com/myqee/database/issues",
+                "source": "https://github.com/myqee/database/tree/master"
+            },
             "time": "2017-11-03T07:48:44+00:00"
         },
         {
@@ -188,6 +196,10 @@
                 "MyQEE",
                 "database"
             ],
+            "support": {
+                "issues": "https://github.com/myqee/database-mongodb/issues",
+                "source": "https://github.com/myqee/database-mongodb/tree/v4.2.4"
+            },
             "time": "2020-07-29T04:50:37+00:00"
         },
         {
@@ -236,6 +248,10 @@
                 "driver",
                 "mysqli"
             ],
+            "support": {
+                "issues": "https://github.com/myqee/database-mysqli/issues",
+                "source": "https://github.com/myqee/database-mysqli/tree/master"
+            },
             "time": "2016-10-21T08:29:20+00:00"
         },
         {
@@ -278,6 +294,10 @@
                 "MyQEE",
                 "installer"
             ],
+            "support": {
+                "issues": "https://github.com/myqee/installer/issues",
+                "source": "https://github.com/myqee/installer/tree/master"
+            },
             "time": "2016-11-09T05:20:24+00:00"
         },
         {
@@ -345,6 +365,10 @@
                 "nette",
                 "sqlite"
             ],
+            "support": {
+                "issues": "https://github.com/nette/caching/issues",
+                "source": "https://github.com/nette/caching/tree/v3.0.2"
+            },
             "time": "2020-11-16T01:37:04+00:00"
         },
         {
@@ -418,6 +442,10 @@
                 "queries",
                 "sqlite"
             ],
+            "support": {
+                "issues": "https://github.com/nette/database/issues",
+                "source": "https://github.com/nette/database/tree/v3.0.7"
+            },
             "time": "2020-10-30T13:01:25+00:00"
         },
         {
@@ -481,6 +509,10 @@
                 "iterator",
                 "nette"
             ],
+            "support": {
+                "issues": "https://github.com/nette/finder/issues",
+                "source": "https://github.com/nette/finder/tree/v2.5.2"
+            },
             "time": "2020-01-03T20:35:40+00:00"
         },
         {
@@ -562,6 +594,10 @@
                 "utility",
                 "validation"
             ],
+            "support": {
+                "issues": "https://github.com/nette/utils/issues",
+                "source": "https://github.com/nette/utils/tree/v3.2.0"
+            },
             "time": "2020-11-25T23:47:50+00:00"
         },
         {
@@ -578,9 +614,13 @@
                 "reference": "b4d2fe7e26f06b670d13a2fcf7e18a05a9a02c47",
                 "shasum": ""
             },
+            "default-branch": true,
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
             "description": "Zero MQ library for php",
+            "support": {
+                "source": "https://github.com/shogochiai/php-zmq/tree/master"
+            },
             "time": "2015-06-16T02:11:43+00:00"
         }
     ],
@@ -594,5 +634,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }

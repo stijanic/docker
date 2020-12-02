@@ -66,18 +66,18 @@ EXPOSE 8080
 
 COPY --chown=stijanic:stijanic . /home/stijanic
 
-RUN echo "export GEM_HOME=$HOME/.gems" >> ~/.bashrc
-RUN echo "export PATH=$PATH:$GEM_HOME/bin" >> ~/.bashrc
+RUN echo 'export GEM_HOME=$HOME/.gems' >> ~/.bashrc
+RUN echo 'export PATH=$PATH:$GEM_HOME/bin' >> ~/.bashrc
 RUN GEM_HOME=$HOME/.gems gem install bundler
 RUN GEM_HOME=$HOME/.gems $HOME/.gems/bin/bundler install
 
-RUN composer install
-RUN composer update
+RUN php composer.phar install
+RUN php composer.phar update
 
 RUN pip3 install -r requirements.txt
 
-RUN echo "export NODE_PATH=$HOME/node_modules" >> ~/.bashrc
-RUN echo "export PATH=$PATH:$NODE_PATH/.bin" >> ~/.bashrc
+RUN echo 'export NODE_PATH=$HOME/node_modules' >> ~/.bashrc
+RUN echo 'export PATH=$PATH:$NODE_PATH/.bin' >> ~/.bashrc
 RUN npm install
 
 CMD ["node", "node.js/4.2.4/_Node.js/learnyounode/http-json-api-server.js", "8080"]

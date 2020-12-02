@@ -6,4 +6,7 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [seancorfield/next.jdbc "1.1.613"]
                  [postgresql/postgresql "9.0-801.jdbc4"]]
-  :repl-options {:init-ns test.core})
+  :main ^:skip-aot test.core
+  :target-path "target/%s"
+  :repl-options {:init-ns test.core-test}
+  :profiles {:uberjar {:aot :all}})
