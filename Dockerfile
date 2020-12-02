@@ -45,6 +45,7 @@ RUN \
   apt-get install -y python3-pip && \
   apt-get install -y nodejs && \
   apt-get install -y npm && \
+  apt-get install -y clojure && \
   apt-get install -y vim && \
   apt-get install -y libmysqlclient-dev && \
   apt-get install -y libpq-dev && \
