@@ -51,7 +51,6 @@ RUN \
   apt-get install -y libpq-dev && \
   apt-get install -y libzmq3-dev
 
-
 RUN groupadd -g 1001 stijanic
 
 RUN useradd -rm -d /home/stijanic -s /bin/bash -g stijanic -u 1001 -p wyc60ExwcvnTA stijanic
@@ -72,6 +71,7 @@ RUN GEM_HOME=$HOME/.gems gem install bundler
 RUN GEM_HOME=$HOME/.gems $HOME/.gems/bin/bundler install
 
 RUN composer install
+RUN composer update
 
 RUN pip3 install -r requirements.txt
 
