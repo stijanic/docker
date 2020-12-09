@@ -3,3 +3,5 @@ pymongo==3.11.1
 mysqlclient==2.0.1 
 psycopg2==2.8.6
 redis==3.5.3
+simple-salesforce==1.10.1
+requests==2.24.0
