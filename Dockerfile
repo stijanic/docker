@@ -82,4 +82,6 @@ RUN echo 'export NODE_PATH=$HOME/node_modules' >> ~/.bashrc
 RUN echo 'export PATH=$PATH:$NODE_PATH/.bin' >> ~/.bashrc
 RUN npm install
 
+RUN echo 'export GNUSTEP_MAKEFILES=/usr/lib/GNUstep/Makefiles' >> ~/.bashrc
+
 CMD ["node", "node.js/4.2.4/_Node.js/learnyounode/http-json-api-server.js", "8080"]
