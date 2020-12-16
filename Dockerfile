@@ -50,6 +50,8 @@ RUN \
   apt-get install -y vim && \
   apt-get install -y libmysqlclient-dev && \
   apt-get install -y libpq-dev && \
+  apt-get install -y libgnustep-base-dev && \
+  apt-get install -y gnustep-make && \
   apt-get install -y libzmq3-dev
 
 RUN groupadd -g 1001 stijanic
