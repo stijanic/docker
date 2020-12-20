@@ -1,22 +1,15 @@
-# test
+# Clojure
 
-A Clojure library designed to ... well, that part is up to you.
+An Amazing Clojure library designed to learn Clojure! I was good in Common LISP, btw!
 
 ## Usage
 
-FIXME
+We will see...
 
-## License
+## RELP (Read Eval Print Loop) - Server
 
-Copyright © 2020 FIXME
+- **`clojure`**` -Sdeps '{:deps {nrepl {:mvn/version "0.6.0"} cider/cider-nrepl {:mvn/version "0.22.4"}}}' -M -m nrepl.cmdline --middleware '["cider.nrepl/cider-middleware"]'`
 
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
+- **`clj`**` -Sdeps '{:deps {cider/cider-nrepl {:mvn/version "0.25.2"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"`
 
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+- **`lein`**` repl :headless`
