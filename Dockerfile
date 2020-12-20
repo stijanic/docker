@@ -1,34 +1,31 @@
-# cp -pr Docker ~/tmp/docker
-# cd ~/tmp/docker
+# docker build --tag stijanic .
+# docker run -p 8080:8080 --name web -d stijanic
+# docker logs web
+# docker exec -it web bash
+# docker start web
+# docker stop web
+# docker rm web
+# docker ps -a
+# docker images
+# docker rmi stijanic
 
-# sudo docker build --tag stijanic .
-# sudo docker run -p 8080:8080 --name web -d stijanic
-# sudo docker logs web
-# sudo docker exec -it web bash
-# sudo docker start web
-# sudo docker stop web
-# sudo docker rm web
-# sudo docker ps -a
-# sudo docker images
-# sudo docker rmi stijanic
+# docker login
+# docker push stijanic/docker
+# docker pull stijanic/docker
+# docker tag web stijanic/docker
+# docker logout
 
-# sudo docker login
-# sudo docker push stijanic/docker
-# sudo docker pull stijanic/docker
-# sudo docker tag web stijanic/docker
-# sudo docker logout
+# heroku login
+# heroku apps:destroy -a stijanic-docker --confirm stijanic-docker
+# heroku apps:create --region eu stijanic-docker
+# heroku container:login
+# heroku container:push web -a stijanic-docker
+# heroku container:release web -a stijanic-docker
+# heroku logs --tail -a stijanic-docker
+# heroku run bash
+# heroku logout
 
-# sudo heroku login
-# sudo heroku apps:destroy -a stijanic-docker --confirm stijanic-docker
-# sudo heroku apps:create --region eu stijanic-docker
-# sudo heroku container:login
-# sudo heroku container:push web -a stijanic-docker
-# sudo heroku container:release web -a stijanic-docker
-# sudo heroku logs --tail -a stijanic-docker
-# sudo heroku run bash
-# sudo heroku logout
-
-FROM ubuntu:20.04
+FROM debian:bullseye
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Belgrade
@@ -48,7 +45,7 @@ RUN \
   apt-get install -y clojure && \
   apt-get install -y leiningen && \
   apt-get install -y vim && \
-  apt-get install -y libmysqlclient-dev && \
+  apt-get install -y libmariadbclient-dev && \
   apt-get install -y libpq-dev && \
   apt-get install -y libgnustep-base-dev && \
   apt-get install -y gnustep-make && \
