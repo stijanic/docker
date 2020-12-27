@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # SWIG build
 swig -python factorial.i
@@ -6,7 +6,7 @@ python setup.py build_ext
 cp ./build/lib.linux-x86_64-3.9/_factorial.cpython-39-x86_64-linux-gnu.so .
 
 # C build
-gcc main.c factorial.c -o a.out
+gcc main.c factorial.c -o factorial
 
 # Python
 echo
@@ -23,7 +23,7 @@ sleep 3
 # C
 echo
 echo -n "C: factorial(20)... # iterations-> "
-time ./a.out
+time ./factorial
 sleep 3
 
 echo

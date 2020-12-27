@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "factorial.h"
 
-void main(void) {
+int main(void) {
   int i = 0;
 
   for (i = 0; i < 9000000; i++) {
