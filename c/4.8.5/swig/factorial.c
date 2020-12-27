@@ -4,7 +4,7 @@ long factorial(long n) {
     return 0;
   }
   if (n == 0) {
-    return 1;
+      return 1;
   } else {
     /* testing for overflow would be a good idea here */
     return n * factorial(n - 1);
