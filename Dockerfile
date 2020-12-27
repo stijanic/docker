@@ -49,7 +49,8 @@ RUN \
   apt-get install -y libpq-dev && \
   apt-get install -y libgnustep-base-dev && \
   apt-get install -y gnustep-make && \
-  apt-get install -y libzmq3-dev
+  apt-get install -y libzmq3-dev && \
+  apt-get install -y swig
 
 RUN groupadd -g 1001 stijanic
 
