@@ -31,26 +31,27 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Belgrade
 
 RUN \
-  apt-get update && \
-  apt-get install -y tzdata && \
-  apt-get install -y ruby && \
-  apt-get install -y ruby-dev && \
-  apt-get install -y php && \
-  apt-get install -y composer && \
-  apt-get install -y python3 && \
-  apt-get install -y python-is-python3 && \
-  apt-get install -y python3-pip && \
-  apt-get install -y nodejs && \
-  apt-get install -y npm && \
-  apt-get install -y clojure && \
-  apt-get install -y leiningen && \
-  apt-get install -y vim && \
-  apt-get install -y libmariadbclient-dev && \
-  apt-get install -y libpq-dev && \
-  apt-get install -y libgnustep-base-dev && \
-  apt-get install -y gnustep-make && \
-  apt-get install -y libzmq3-dev && \
-  apt-get install -y swig
+  apt update && \
+  apt install -y tzdata && \
+  apt install -y ruby && \
+  apt install -y ruby-dev && \
+  apt install -y php && \
+  apt install -y composer && \
+  apt install -y python3 && \
+  apt install -y python-is-python3 && \
+  apt install -y python3-pip && \
+  apt install -y nodejs && \
+  apt install -y npm && \
+  apt install -y clojure && \
+  apt install -y leiningen && \
+  apt install -y vim && \
+  apt install -y libmariadbclient-dev && \
+  apt install -y libpq-dev && \
+  apt install -y libgnustep-base-dev && \
+  apt install -y gnustep-make && \
+  apt install -y libzmq3-dev && \
+  apt install -y swig && \
+  apt install -y gdbserver
 
 RUN groupadd -g 1001 stijanic
 
