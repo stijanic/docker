@@ -1,42 +1,40 @@
 #include <stdio.h>
 #include <string.h>
- 
-struct Books
-{
-   char  title[50];
-   char  author[50];
-   char  subject[100];
-   int   book_id;
-};
- 
-int main( )
-{
-   struct Books Book1;        /* Declare Book1 of type Book */
-   struct Books Book2;        /* Declare Book2 of type Book */
- 
-   /* book 1 specification */
-   strcpy( Book1.title, "C Programming");
-   strcpy( Book1.author, "Nuha Ali"); 
-   strcpy( Book1.subject, "C Programming Tutorial");
-   Book1.book_id = 6495407;
 
-   /* book 2 specification */
-   strcpy( Book2.title, "Telecom Billing");
-   strcpy( Book2.author, "Zara Ali");
-   strcpy( Book2.subject, "Telecom Billing Tutorial");
-   Book2.book_id = 6495700;
- 
-   /* print Book1 info */
-   printf( "Book 1 title : %s\n", Book1.title);
-   printf( "Book 1 author : %s\n", Book1.author);
-   printf( "Book 1 subject : %s\n", Book1.subject);
-   printf( "Book 1 book_id : %d\n", Book1.book_id);
+typedef struct _Book {
+	char title[50];
+	char author[50];
+	char subject[100];
+	int book_id;
+} Book;
 
-   /* print Book2 info */
-   printf( "Book 2 title : %s\n", Book2.title);
-   printf( "Book 2 author : %s\n", Book2.author);
-   printf( "Book 2 subject : %s\n", Book2.subject);
-   printf( "Book 2 book_id : %d\n", Book2.book_id);
+int main() {
+	Book book_one; /* Declare book_one of type "Book" */
+	struct _Book book_two; /* Declare book_two of type "struct _Book" */
 
-   return 0;
+	/* book 1 specification */
+	strcpy(book_one.title, "C Programming");
+	strcpy(book_one.author, "Pera Peric");
+	strcpy(book_one.subject, "C Programming Tutorial");
+	book_one.book_id = 6495407;
+
+	/* book 2 specification */
+	strcpy(book_two.title, "Telecom Billing");
+	strcpy(book_two.author, "Mika Mikic");
+	strcpy(book_two.subject, "Telecom Billing Tutorial");
+	book_two.book_id = 6495700;
+
+	/* print Book1 info */
+	printf("Book 1 title : %s\n", book_one.title);
+	printf("Book 1 author : %s\n", book_one.author);
+	printf("Book 1 subject : %s\n", book_one.subject);
+	printf("Book 1 book_id : %d\n", book_one.book_id);
+
+	/* print Book2 info */
+	printf("Book 2 title : %s\n", book_two.title);
+	printf("Book 2 author : %s\n", book_two.author);
+	printf("Book 2 subject : %s\n", book_two.subject);
+	printf("Book 2 book_id : %d\n", book_two.book_id);
+
+	return (0);
 }

@@ -19,42 +19,44 @@ int main(void) {
 		printf("How many hours did you work? ");
 		if (scanf("%lf", hours) > 0) { //d for int
 
-		  // Get the hourly pay rate.
-		  printf("How much do you get paid per hour? ");
-		  if (scanf("%lf", rate) > 0) { //d for int
+			// Get the hourly pay rate.
+			printf("How much do you get paid per hour? ");
+			if (scanf("%lf", rate) > 0) { //d for int
 
-		    // Calculate the pay.
-		    *pay = *hours * *rate;
+				// Calculate the pay.
+				*pay = *hours * *rate;
 
-		    // Display the pay.
-		    printf("You have earned $%.2f for %.0f hours of work at $%0.2f/hour rate.\n", *pay, *hours, *rate); //d for int
+				// Display the pay.
+				printf(
+						"You have earned $%.2f for %.0f hours of work at $%0.2f/hour rate.\n",
+						*pay, *hours, *rate); //d for int
 
-		  // Input was wrong
-		  } else {
-		    printf("Wrong Input!\n");
-			free(hours);
-			free(rate);
-			free(pay);
+				// Input was wrong
+			} else {
+				printf("Wrong Input!\n");
+				free(hours);
+				free(rate);
+				free(pay);
 
-		    return INPUT_ERROR;
-		  }
+				return (INPUT_ERROR);
+			}
 
-		// Input was wrong
+			// Input was wrong
 		} else {
-		    printf("Wrong Input!\n");
+			printf("Wrong Input!\n");
 			free(hours);
 			free(rate);
 			free(pay);
 
-		    return INPUT_ERROR;
+			return (INPUT_ERROR);
 		}
-		
+
 		free(hours);
 		free(rate);
 		free(pay);
 
-		return OK;
+		return (OK);
 	} else {
-		return MEMORY_ERROR;
+		return (MEMORY_ERROR);
 	}
 }
