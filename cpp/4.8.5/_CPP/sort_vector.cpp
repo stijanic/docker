@@ -1,6 +1,6 @@
 #include "std_lib_facilities.h"
 
-int main() {
+int main(void) {
 	vector<int> v = { 5, 7, 9, 4, 6, 8 };
 
 	cout << "v.size() == " << v.size() << " : ";
@@ -28,4 +28,6 @@ int main() {
 	sort(v);
 	// sort temperatures
 	cout << "Median temperature: " << v[v.size()/2] << '\n';
+
+	return (0);
 }

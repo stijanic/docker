@@ -8,6 +8,11 @@
 #include "std_lib_facilities.h"
 #include "Date.h"
 
+using Time::Date;
+using Time::y;
+using Time::m;
+using Time::d;
+
 Date::Date(void) {
 	this->year = 0;
 	this->month = 0;
@@ -33,9 +38,9 @@ Date::Date(const Date &date) { // copy constructor
 };
 
 Date::~Date() {
-	year = (int) NULL;
-	month = (int) NULL;
-	day = (int) NULL;
+	year = 0;
+	month = 0;
+	day = 0;
 
 	cout << "Destructing..." << endl;
 }
@@ -65,7 +70,7 @@ void Date::setYear(int year) {
 }
 
 Date Date::epoch() {
-	return Date{1970,1,1};
+	return Date{Y, M, D};
 }
 
 Date Date::add(Date dateToAdd){
@@ -85,7 +90,7 @@ void Date::print() {
 }
 
 int main(void){
-	Date date{2020, 01, 01};
+	Date date{2021, 01, 01};
 	date.print();
 
 	date.addDays(5);
@@ -96,5 +101,9 @@ int main(void){
 	date = date.add(date);
 	date.print();
 
-	return 0;
+	cout << y << ' ' << m << ' ' << d << endl;
+
+	cout << Date::YEAR << ' ' << Date::MONTH << ' ' << Date::DAY << endl;
+
+	return (0);
 }

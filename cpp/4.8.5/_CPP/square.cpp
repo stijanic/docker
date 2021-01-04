@@ -13,6 +13,8 @@ void print_square(double x) {
 	cout << "the square of " << x << " is " << square(x) << "\n";
 }
 
-int main() {
+int main(void) {
 	print_square(1.234);
+
+	return (0);
 }

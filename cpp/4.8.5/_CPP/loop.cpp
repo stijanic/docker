@@ -1,6 +1,6 @@
 #include "std_lib_facilities.h"
 
-int main() {
+int main(void) {
 	double d = 0;
 	while (cin >> d) {	// repeat the statements below
 					// as long as we type in numbers
@@ -12,4 +12,6 @@ int main() {
 			 << " i2==" << i2				// int value of char
 			 << " char(" << c << ")\n";		// the char
 	}
+
+	return (0);
 }

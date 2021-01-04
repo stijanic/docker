@@ -2,7 +2,7 @@
 #include "std_lib_facilities.h"
 
 // read name and age
-int main() {
+int main(void) {
 	cout << "Please enter your first name and age\n";
 
 	string first_name;	// string variable
@@ -12,4 +12,5 @@ int main() {
 	cin >> age;			// read an integer
 
 	cout << "Hello, " << first_name << " (age " << age << ")\n";
+	return (0);
 }

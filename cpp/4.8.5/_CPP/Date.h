@@ -8,9 +8,19 @@
 #ifndef DATE_H_
 #define DATE_H_
 
+namespace Time {
+
+int y = 2021;
+int m = 1;
+int d = 1;
+
 class Date {
 
 private:
+	const static int Y = 1972;
+	const static int M = 3;
+	const static int D = 20;
+
 	int year, month, day;
 
 public:
@@ -41,11 +51,15 @@ public:
 		this->year += years;
 	}
 
+	const static int YEAR = 1970;
+	const static int MONTH = 1;
+	const static int DAY = 1;
+
 	static Date epoch(); // some static function fun
 
 	Date add(Date dateToAdd);
 
 	void print();
 };
-
+}
 #endif /* DATE_H_ */

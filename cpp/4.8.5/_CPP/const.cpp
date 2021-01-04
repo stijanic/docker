@@ -11,10 +11,12 @@ void use(int n) {
 	cout << "c2 == " << c2 << "\n";
 }
 
-int main() {
+int main(void) {
 	constexpr double pi = 3.14159;
 
 	cout << "pi == " << pi << "\n";
 	cout << "round(pi) == " << round(pi) << "\n";
 	use(round(pi));
+
+	return (0);
 }

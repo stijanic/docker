@@ -1,19 +1,19 @@
 #
 # 'make depend' uses makedepend to automatically generate dependencies
 #               (dependencies are added to end of Makefile)
-# 'make'        build executable file 'mycc'
+# 'make'        build executable file 'mycpp'
 # 'make clean'  removes all .o and executable files
 #
 
 # define the C++ compiler to use
-CXX = g++
+CPP = g++
 
 # define any compile-time flags
-CXXFLAGS = -Wall -g -pg -fprofile-arcs -ftest-coverage
+CPPFLAGS = -Wall -g -pg -fprofile-arcs -ftest-coverage
 
 # define any directories containing header files other than /usr/include
 #
-CXXINCS = -I./include #-I/home/newhall/include  -I../include
+INCS = -I./include #-I/home/newhall/include  -I../include
 
 # define library paths in addition to /usr/lib
 #   if I wanted to include libraries not in /usr/lib I'd specify
@@ -26,20 +26,20 @@ LFLAGS = #-L/home/newhall/lib  -L../lib -static
 LIBS = #-lmylib -lm
 
 # define the C++ source files
-CXXSRCS = $(wildcard *.cc)
+SRCS = $(wildcard *.cpp)
 
 # define the C++ object files
 #
 # This uses Suffix Replacement within a macro:
 #   $(name:string1=string2)
 #         For each word in 'name' replace 'string1' with 'string2'
-# Below we are replacing the suffix .c of all words in the macro CXXSRCS
+# Below we are replacing the suffix .c of all words in the macro SRCS
 # with the .o suffix
 #
-CXXOBJS = $(CXXSRCS:.cc=.o)
+OBJS = $(SRCS:.cpp=.o)
 
 # define the executable files
-CXXMAINS = $(subst .cc,,$(wildcard *.cc))
+MAINS = $(subst .cpp,,$(wildcard *.cpp))
 
 #
 # The following part of the makefile is generic; it can be used to
@@ -49,33 +49,33 @@ CXXMAINS = $(subst .cc,,$(wildcard *.cc))
 
 .PHONY: depend clean lint cppcheck version
 
-all:	$(CXXMAINS)
-	@echo  Programs named: $(CXXMAINS), have been compiled.
+all:	$(MAINS)
+	@echo  Programs named: $(MAINS), have been compiled.
 
-.o:	$(CXXOBJS)
-	$(CXX) $< -o $@ $(CXXFLAGS) $(LFLAGS) $(LIBS)
+.o:	$(OBJS)
+	$(CPP) $< -o $@ $(CPPFLAGS) $(LFLAGS) $(LIBS)
 
-# this is a suffix replacement rule for building .o's from .cc's
+# this is a suffix replacement rule for building .o's from .cpp's
 # it uses automatic variables $<: the name of the prerequisite of
 # the rule(a .c file) and $@: the name of the target of the rule (a .o file)
 # (see the gnu make manual section about automatic variables)
-.cc.o:
-	$(CXX) $(CXXFLAGS) $(CXXINCS) -c $< -o $@
+.cpp.o:
+	$(CPP) $(CPPFLAGS) $(INCS) -c $< -o $@
 	
 clean:
-	$(RM) $(CXXOBJS) $(CXXMAINS) *.out *.gcno *.gcda *~
+	$(RM) $(OBJS) $(MAINS) *.out *.gcno *.gcda *~
 
 cppcheck:
-	cppcheck $(CXXSRCS)
+	cppcheck $(SRCS)
 
 # Can't handle multiple mains
 lint:
-	splint $(CXXSRCS)
+	splint $(SRCS)
 
 version:
-	$(CXX) --version
+	$(CPP) --version
 
-depend: $(CXXSRCS)
-	makedepend $(CXXINCS) $^
+depend: $(SRCS)
+	makedepend $(INCS) $^
 
 # DO NOT DELETE THIS LINE -- make depend needs it

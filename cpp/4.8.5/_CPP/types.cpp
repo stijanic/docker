@@ -12,7 +12,7 @@ double d3 = { 2.3 };
 string motto { "Who dares wins" };
 vector<double> v {1.2, 3.4, 4.5};
 
-int main() {
+int main(void) {
 	cout << "bool " << sizeof(bool) << "\n";
 	cout << "char " << sizeof(char) << "\n";
 	cout << "int " << sizeof(int) << "\n";
@@ -22,4 +22,6 @@ int main() {
 	cout << d1 + d2 + d3 << "\n";
 	cout << "vector " << v[0] << " " << v[1] << " " << v[2] << endl;
 	keep_window_open();	// wait for a character to be entered
+
+	return (0);
 }

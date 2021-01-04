@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+int main(void) {
 	double hours, rate, pay;
 	
 	// Get the number of hours worked.
@@ -18,5 +18,5 @@ int main() {
 
 	// Display the pay.
 	cout << "You have earned $" << pay << endl;
-	return 0;
+	return (0);
 }

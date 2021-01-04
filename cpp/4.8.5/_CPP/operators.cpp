@@ -1,7 +1,7 @@
 // simple program to exercise operators
 #include "std_lib_facilities.h"
 
-int main() {
+int main(void) {
 	cout << "Please enter a floating-point value: ";
 
 	double n;
@@ -15,4 +15,6 @@ int main() {
 		 << "\nhalf of n == " << n / 2
 		 << "\nsquare root of n == " << sqrt(n)
 		 << '\n'; // name for newline (“end of line”) in output
+
+	return (0);
 }

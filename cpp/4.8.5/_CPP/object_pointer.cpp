@@ -44,5 +44,5 @@ int main(void) {
 	p--; // retreat to previous object in array: to[0]
 	p->showValue();
 
-	return 0;
+	return (0);
 }

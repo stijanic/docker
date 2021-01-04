@@ -1,6 +1,6 @@
 #include "std_lib_facilities.h"
 
-int main() {
+int main(void) {
 	int number_of_words = 0;
 	string previous = " "; // previous word; initialized to “not a word”
 	string current; // current word
@@ -12,4 +12,6 @@ int main() {
 				 << " repeated: " << current << '\n';
 		previous = current;
 	}
+
+	return (0);
 }
