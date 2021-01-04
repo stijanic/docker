@@ -20,6 +20,6 @@ int main() {
 	cout << "unsigned " << sizeof(unsigned) << "\n";
 	cout << "string " << sizeof(string) << "\n";
 	cout << d1 + d2 + d3 << "\n";
-	cout << "vector " << v[0] << " " << v[1] << " " << v[2] << "\n";
+	cout << "vector " << v[0] << " " << v[1] << " " << v[2] << endl;
 	keep_window_open();	// wait for a character to be entered
 }
