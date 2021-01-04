@@ -6,14 +6,14 @@
 #
 
 # define the C++ compiler to use
-CPP = g++
-
-# define any compile-time flags
-CPPFLAGS = -Wall -g -pg -fprofile-arcs -ftest-coverage
+CXX = g++
 
 # define any directories containing header files other than /usr/include
 #
 INCS = -I./include #-I/home/newhall/include  -I../include
+
+# define any compile-time flags
+CXXFLAGS = -Wall -g -pg -fprofile-arcs -ftest-coverage $(INCS)
 
 # define library paths in addition to /usr/lib
 #   if I wanted to include libraries not in /usr/lib I'd specify
@@ -53,14 +53,14 @@ all:	$(MAINS)
 	@echo  Programs named: $(MAINS), have been compiled.
 
 .o:	$(OBJS)
-	$(CPP) $< -o $@ $(CPPFLAGS) $(LFLAGS) $(LIBS)
+	$(CXX) $< -o $@ $(CXXFLAGS) $(LFLAGS) $(LIBS)
 
 # this is a suffix replacement rule for building .o's from .cpp's
 # it uses automatic variables $<: the name of the prerequisite of
 # the rule(a .c file) and $@: the name of the target of the rule (a .o file)
 # (see the gnu make manual section about automatic variables)
-.cpp.o:
-	$(CPP) $(CPPFLAGS) $(INCS) -c $< -o $@
+#.cpp.o:
+#	$(CXX) $(CXXFLAGS) -c $< -o $@
 	
 clean:
 	$(RM) $(OBJS) $(MAINS) *.out *.gcno *.gcda *~
@@ -73,7 +73,7 @@ lint:
 	splint $(SRCS)
 
 version:
-	$(CPP) --version
+	$(CXX) --version
 
 depend: $(SRCS)
 	makedepend $(INCS) $^

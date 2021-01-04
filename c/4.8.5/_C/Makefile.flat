@@ -8,12 +8,12 @@
 # define the C compiler to use
 CC = gcc
 
-# define any compile-time flags
-CFLAGS = -Wall -g -pg -DUNIX -fprofile-arcs -ftest-coverage
-
 # define any directories containing header files other than /usr/include
 #
 INCS = -I./ #-I/home/newhall/include  -I../include
+
+# define any compile-time flags
+CFLAGS = -Wall -g -pg -DUNIX -fprofile-arcs -ftest-coverage $(INCS)
 
 # define library paths in addition to /usr/lib
 #   if I wanted to include libraries not in /usr/lib I'd specify
@@ -53,14 +53,14 @@ all:    $(MAIN)
 	@echo  Program named $(MAIN) has been compiled
 
 $(MAIN): $(OBJS) 
-	$(CC) $(CFLAGS) $(INCS) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
+	$(CC) $(CFLAGS) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
 
 # this is a suffix replacement rule for building .o's from .c's
 # it uses automatic variables $<: the name of the prerequisite of
 # the rule(a .c file) and $@: the name of the target of the rule (a .o file) 
 # (see the gnu make manual section about automatic variables)
-.c.o:
-	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
+#.c.o:
+#	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(MAIN) $(OBJS) a.out *.gcda *.gcno gmon.out perf.data *~

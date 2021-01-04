@@ -8,12 +8,12 @@
 # define the C compiler to use
 CC = gcc
 
-# define any compile-time flags
-CFLAGS = -Wall -g -pg -fprofile-arcs -ftest-coverage
-
 # define any directories containing header files other than /usr/include
 #
 INCS = #-I/home/newhall/include  -I../include
+
+# define any compile-time flags
+CFLAGS = -Wall -g -pg -fprofile-arcs -ftest-coverage $(INCS)
 
 # define library paths in addition to /usr/lib
 #   if I wanted to include libraries not in /usr/lib I'd specify
@@ -59,8 +59,8 @@ all:    $(MAINS)
 # it uses automatic variables $<: the name of the prerequisite of
 # the rule(a .c file) and $@: the name of the target of the rule (a .o file)
 # (see the gnu make manual section about automatic variables)
-.c.o:
-	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
+#.c.o:
+#	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS) $(MAINS) *.gcno *.gcda *.out *~
