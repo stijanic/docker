@@ -50,10 +50,10 @@ int main(void) {
 	p->who(); // access B's who()
 
 	p = &d1;
-	p->who(); // access B's who()
+	p->who(); // access D1's who()
 
 	p = &d2;
-	p->who(); // access B's who()
+	p->who(); // access D2's who()
 
 	return (0);
 }
