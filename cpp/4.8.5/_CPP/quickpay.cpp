@@ -18,5 +18,6 @@ int main(void) {
 
 	// Display the pay.
 	cout << "You have earned $" << pay << endl;
+	
 	return (0);
 }

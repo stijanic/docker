@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
 	int var = 20; /* actual variable declaration */
 	int *ip; /* pointer variable declaration */
 

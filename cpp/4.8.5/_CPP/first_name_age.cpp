@@ -12,5 +12,6 @@ int main(void) {
 	cin >> age;			// read an integer
 
 	cout << "Hello, " << first_name << " (age " << age << ")\n";
+	
 	return (0);
 }

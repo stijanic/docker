@@ -8,7 +8,7 @@ typedef struct _Book {
 	int book_id;
 } Book;
 
-int main() {
+int main(void) {
 	Book book_one; /* Declare book_one of type "Book" */
 	struct _Book book_two; /* Declare book_two of type "struct _Book" */
 

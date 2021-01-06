@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 
-int main() {
+int main(void) {
 
 	time_t biggest = 0x7FFFFFFF;
 
