@@ -15,12 +15,12 @@ INCDIRS = ./ #/home/newhall/include ../include
 INCS = $(foreach DIR,$(INCDIRS),$(wildcard $(DIR)/*.h))
 
 # define any compile-time flags
-CFLAGS = -Wall -g -pg -fprofile-arcs -ftest-coverage $(foreach DIR,$(INCDIRS),-I$(DIR))
+CFLAGS = #-Wall -g -pg -fprofile-arcs -ftest-coverage $(foreach DIR,$(INCDIRS),-I$(DIR))
 
 # define library paths in addition to /usr/lib
 #   if I wanted to include libraries not in /usr/lib I'd specify
 #   their path using -Lpath, something like:
-LDFLAGS = -g -pg -fprofile-arcs -ftest-coverage #-L/home/newhall/lib -L../lib -static
+LDFLAGS = #-g -pg -fprofile-arcs -ftest-coverage #-L/home/newhall/lib -L../lib -static
 
 # define any libraries to link into executable:
 #   if I want to link in libraries (libx.so or libx.a) I use the -llibname
@@ -42,7 +42,7 @@ MAIN = factorial
 # deleting dependencies appended to the file from 'make depend'
 #
 
-.PHONY: depend doxygen clean cppcheck lint version
+.PHONY: depend swig doxygen clean cppcheck lint version
 
 all: $(MAIN)
 	@echo  Program named $(MAIN) has been compiled
@@ -58,7 +58,12 @@ $(MAIN): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(MAIN) $(OBJS) *.out *.gcda *.gcno gmon.out perf.data *~
+	$(RM) -rf $(MAIN) $(OBJS) *.out *.gcda *.gcno gmon.out perf.data *~ build factorial factorial.py factorial_wrap.c __pycache__/ *.so *.egg-info
+
+swig:
+	swig -python factorial.i
+	python setup.py --quiet build_ext
+	python setup.py --quiet install --install-platlib=.
 
 doxygen:
 	doxygen $(MAIN)-Doxygen.conf

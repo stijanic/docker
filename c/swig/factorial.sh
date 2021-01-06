@@ -1,32 +1,37 @@
 #!/bin/bash
 
-# SWIG build
-swig -python factorial.i
-python setup.py build_ext
-python setup.py install --install-platlib=.
-
-# C build
-gcc main.c factorial.c -o factorial
+# Makefile
+echo
+echo "0. Building exectuable and shared library"
+echo
+make
+make swig
 
 # Python
 echo
-echo -n "Python: factorial(20)... # iterations-> "
+echo -n "1. Python: factorial(20)... # of iterations-> "
 time python python.py
-sleep 3
+sleep 1
 
-# SWIG
+# Python ctypes
 echo
-echo -n "SWIG: factorial(20)... # iterations-> "
-time python swig.py
-sleep 3
+echo -n "2. Python ctypes: factorial(20)... # of iterations-> "
+time python python_ctypes.py
+sleep 1
+
+# Python SWIG
+echo
+echo -n "3. Python SWIG: factorial(20)... # of iterations-> "
+time python python_swig.py
+sleep 1
 
 # C
 echo
-echo -n "C: factorial(20)... # iterations-> "
+echo -n "4. C: factorial(20)... # of iterations-> "
 time ./factorial
-sleep 3
+sleep 1
 
 echo
-echo -n "I am ready to clean... Hit enter."
+echo -n "5. Cleaning... Hit enter."
 read
-rm -rf build factorial factorial.py factorial_wrap.c __pycache__/ *.so *.egg-info
+make clean
