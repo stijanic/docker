@@ -58,10 +58,10 @@ $(MAIN): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) -rf $(MAIN) $(OBJS) *.out *.gcda *.gcno gmon.out perf.data *~ build factorial factorial.py factorial_wrap.c __pycache__/ *.so *.egg-info
+	$(RM) -rf $(MAIN) $(OBJS) *.out *.gcda *.gcno gmon.out perf.data *~ build $(MAIN).py $(MAIN)_wrap.c __pycache__/ *.so *.egg-info
 
 swig:
-	swig -python factorial.i
+	swig -python $(MAIN).i
 	python setup.py --quiet build_ext
 	python setup.py --quiet install --install-platlib=.
 
