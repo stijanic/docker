@@ -3,7 +3,7 @@
 # SWIG build
 swig -python factorial.i
 python setup.py build_ext
-cp ./build/lib.linux-x86_64-3.9/_factorial.cpython-39-x86_64-linux-gnu.so .
+python setup.py install --install-platlib=.
 
 # C build
 gcc main.c factorial.c -o factorial
@@ -29,4 +29,4 @@ sleep 3
 echo
 echo -n "I am ready to clean... Hit enter."
 read
-rm -rf build factorial factorial.py factorial_wrap.c __pycache__/ *.so a.out *.o
+rm -rf build factorial factorial.py factorial_wrap.c __pycache__/ *.so *.egg-info
