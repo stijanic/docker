@@ -10,7 +10,7 @@ CC = gcc
 
 # define any directories containing header files other than /usr/include
 #
-INCDIRS = ./inc #/home/newhall/include ../include
+INCDIRS = ./ #/home/newhall/include ../include
 
 INCS = $(foreach DIR,$(INCDIRS),$(wildcard $(DIR)/*.h))
 
@@ -28,20 +28,16 @@ LDFLAGS = -g -pg -fprofile-arcs -ftest-coverage #-L/home/newhall/lib -L../lib -s
 LDLIBS = #-lmylib -lm
 
 # define the C source files
-SRCDIR = ./src
-
-SRCS = $(wildcard $(SRCDIR)/*.c)
+SRCS = $(wildcard *.c)
 
 # define the C object files
-OBJDIR = ./obj
+OBJS = $(subst .c,.o,$(wildcard *.c))
 
-OBJS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRCS))
+# define the executable file
+MAIN = XXX
 
-# define the executable file 
-MAIN = ./bin/XXX
-  
 #
-# The following part of the makefile is generic; it can be used to 
+# The following part of the makefile is generic; it can be used to
 # build any executable just by changing the definitions above and by
 # deleting dependencies appended to the file from 'make depend'
 #
@@ -51,22 +47,21 @@ MAIN = ./bin/XXX
 all: $(MAIN)
 	@echo  Program named $(MAIN) has been compiled
 
-$(MAIN): $(OBJS) 
-	$(CC) $(LDFLAGS) -o $(MAIN) $(OBJS) $(LIBS)
+$(MAIN): $(OBJS)
+	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
 
 # this is a pattern replacement rule for building .o's from .c's
 # it uses automatic variables $<: the name of the prerequisite of
 # the rule(a .c file) and $@: the name of the target of the rule (a .o file)
 # (see the gnu make manual section about automatic variables)
-
-$(OBJDIR)/%.o: $(SRCDIR)/%.c $(INCS)
-	$(CC) $(CFLAGS) -c $<  -o $@
+%.o: %.c $(INCS)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(MAIN) $(OBJS) *.out $(OBJDIR)/*.gcda $(OBJDIR)/*.gcno gmon.out perf.data *~
+	$(RM) $(MAIN) $(OBJS) *.out *.gcda *.gcno gmon.out perf.data *~
 
 doxygen:
-	doxygen $(MAIN)-doxyfile
+	doxygen $(MAIN)-Doxygen.conf
 
 cppcheck:
 	cppcheck $(SRCS)
