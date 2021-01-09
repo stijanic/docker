@@ -8,5 +8,5 @@
                  [postgresql/postgresql "9.0-801.jdbc4"]]
   :main ^:skip-aot test.core
   :target-path "target/%s"
-  :repl-options {:init-ns test.core-test}
+  :repl-options {:init-ns test.core}
   :profiles {:uberjar {:aot :all}})
