@@ -1,9 +1,11 @@
 # ----------------------------------------------------------------------------
 # A 64-bit recursive implementation of the function
 #
-# Assemble, Link and Run:
+# To Assemble, Link and Run:
 #
 #	as -g -c fact.s -o fact.o && ld -o fact fact.o && ./fact; echo $?
+# or
+#	yasm -g dwarf2 -f elf64 -p gas fact.s -o fact.o -l fact.lst && ld -o fact fact.o && ./fact; echo $?
 #
 # ----------------------------------------------------------------------------
 

@@ -2,7 +2,7 @@
 # A 64-bit Linux application that writes the first 90 Fibonacci numbers.
 # It needs to be linked with a C library.
 #
-# Assemble, Link and Run:
+# To Assemble, Link and Run:
 #
 #	gcc -static -g fib.s -o fib && ./fib
 #

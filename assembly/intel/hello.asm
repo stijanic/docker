@@ -9,7 +9,7 @@
 ; To disassemble:
 ;
 ;	objdump -d -rw -Mintel hello.o	#Intel syntax
-;	objdump -d -rw -Matt hello.o		#AT&T syntax
+;	objdump -d -rw -Matt hello.o	#AT&T syntax
 ; ----------------------------------------------------------------------------------------
 
 section .data

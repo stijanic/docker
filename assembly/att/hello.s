@@ -1,6 +1,7 @@
 # ----------------------------------------------------------------------------------------
 # Writes "Hello, World" to the console using only system calls. Runs on 64-bit Linux only.
-# To assemble and run:
+#
+# To Assemble, Link and Run:
 #
 #	as -g -c hello.s -o hello.o && ld -o hello hello.o && ./hello; echo $?
 # or
@@ -12,7 +13,7 @@
 #
 # To display registers in gdb:
 #
-# info registers
+# 	info registers
 # ----------------------------------------------------------------------------------------
 
 	.global	_start
