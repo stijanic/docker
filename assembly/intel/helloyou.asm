@@ -5,16 +5,16 @@
 ; ----------------------------------------------------------------------------------------
 
 section	.data
-	msg1	db	'What is your name? '
-	len1		equ	$ - msg1
-	msg2	db	'Hello, '
-	len2		equ	$ - msg2
-	len3		equ	256
-	errcd	equ	0
-	
+	msg1:	db 'What is your name? '
+	.len:	equ $ - msg1
+	msg2:	db 'Hello, '
+	.len:	equ $ - msg2
+	len	equ 16
+	errcd	equ len
+
 section .bss
-	name		resb	16
-	
+	name	resb 16
+
 section .text
 	global	_start
 
@@ -34,7 +34,7 @@ _printMsg1:
 	mov	rax, 1
 	mov	rdi, 1
 	mov	rsi, msg1
-	mov	rdx, len1
+	mov	rdx, msg1.len
 	syscall
 	ret
 
@@ -42,7 +42,7 @@ _printMsg2:
 	mov	rax, 1
 	mov	rdi, 1
 	mov	rsi, msg2
-	mov	rdx, len2
+	mov	rdx, msg2.len
 	syscall
 	ret
 
@@ -50,7 +50,7 @@ _readName:
 	mov	rax, 0
 	mov	rdi, 0
 	mov	rsi, name
-	mov	rdx, len3
+	mov	rdx, len
 	syscall
 	ret
 
@@ -58,6 +58,6 @@ _printName:
 	mov	rax, 1
 	mov	rdi, 1
 	mov	rsi, name
-	mov	rdx, len3
+	mov	rdx, len
 	syscall
 	ret

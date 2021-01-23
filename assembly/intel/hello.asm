@@ -1,6 +1,6 @@
 ; ----------------------------------------------------------------------------------------
 ; Writes "Hello, World!" to the console using 64-bit system calls.
-; Runs on 64-bit Linux only. 
+; Runs on 64-bit Linux only.
 ;
 ; To assemble and run:
 ;
@@ -13,14 +13,14 @@
 ; ----------------------------------------------------------------------------------------
 
 section .data
-	text	db	"Hello, World!", 10
-	len	equ	$ - text
+	text	db "Hello, World!", 10
+	len	equ $ - text
 
 section .text
-	global _start
+	global	_start
 
 _start:
-	call _printHello
+	call	_printHello
 
 	mov	rax, 60
 	mov	rdi, 0

@@ -11,14 +11,14 @@
 ; ----------------------------------------------------------------------------------------
 
 section	.data
-	msg	db	'Hello, world!', 0xa	; string with '\n'
-	len	equ	$ - msg					; define length of  string = current instruction address at assembly time - msg address
+	msg	db 'Hello, world!', 0xa	; string with '\n'
+	len	equ $ - msg		; define length of  string = current instruction address at assembly time - msg address
 
 section	.text
-  global _start		; must be declared for linker (ld)
+  global _start			; must be declared for linker (ld)
 
-_start:					; give the entry point to linker
-	call _printHello	; call function _printHello
+_start:				; give the entry point to linker
+	call	_printHello	; call function _printHello
 	mov	eax, 1		; system call number (sys_exit)
 	mov	ebx, 0		; exit code 0
 	int	0x80		; call kernel
