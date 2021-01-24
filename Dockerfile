@@ -51,7 +51,9 @@ RUN \
   apt install -y gnustep-make && \
   apt install -y libzmq3-dev && \
   apt install -y swig && \
-  apt install -y gdbserver
+  apt install -y gdbserver && \
+  apt install -y nasm && \
+  apt install -y yasm
 
 RUN groupadd -g 1001 stijanic
 
