@@ -5,6 +5,8 @@
 #	as -g --32 -c fact32.s -o fact32.o && ld -m elf_i386 -o fact32 fact32.o && ./fact32; echo $?
 # or
 #	yasm -g dwarf2 -f elf32 -p gas fact32.s -o fact32.o -l fact32.lst && ld -m elf_i386 -o fact32 fact32.o && ./fact32; echo $?
+# or
+#	gcc -m32 -g -static -nostdlib -o fact32 fact32.s && ./fact32; echo $?
 #
 # ----------------------------------------------------------------------------------------
 

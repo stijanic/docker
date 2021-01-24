@@ -4,7 +4,7 @@
 #
 # To Assemble, Link and Run:
 #
-#	gcc -static -g fib.s -o fib && ./fib
+#	gcc -g -static fib.s -o fib && ./fib
 #
 # -----------------------------------------------------------------------------
 
@@ -12,10 +12,9 @@
 
 	.text
 main:
-	movq	%rsp, %rbp #for correct debugging
 	push	%rbx		# we have to save this since we use it
 
-	mov	$10, %rcx	# rcx will countdown to 0
+	mov	$10, %rcx	# rcx will countdown to 0 - max value 93
 	xor	%rax, %rax	# rax will hold the current number
 	xor	%rbx, %rbx	# rbx will hold the next number
 	inc	%rbx		# rbx is originally 1

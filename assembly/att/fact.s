@@ -6,7 +6,8 @@
 #	as -g -c fact.s -o fact.o && ld -o fact fact.o && ./fact; echo $?
 # or
 #	yasm -g dwarf2 -f elf64 -p gas fact.s -o fact.o -l fact.lst && ld -o fact fact.o && ./fact; echo $?
-#
+# or
+#	gcc -g -static -nostdlib -o fact fact.s && ./fact; echo $?
 # ----------------------------------------------------------------------------
 
 	.global	_start
