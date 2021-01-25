@@ -53,7 +53,8 @@ RUN \
   apt install -y swig && \
   apt install -y gdbserver && \
   apt install -y nasm && \
-  apt install -y yasm
+  apt install -y yasm && \
+  apt install -y gcc-multilib
 
 RUN groupadd -g 1001 stijanic
 
