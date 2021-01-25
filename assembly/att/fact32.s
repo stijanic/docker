@@ -10,9 +10,9 @@
 #
 # ----------------------------------------------------------------------------------------
 
-	.global	_start
+.section .text
+.global	_start
 
-	.text
 _start:
 	pushl	$5
 	call	_fact

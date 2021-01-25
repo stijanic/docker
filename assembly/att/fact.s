@@ -10,9 +10,9 @@
 #	gcc -g -static -nostdlib -o fact fact.s && ./fact; echo $?
 # ----------------------------------------------------------------------------
 
-	.global	_start
+.section .text
+.global	_start
 
-	.text
 _start:
 	mov	$5, %rdi	# store immediate value for factorial calculation
 	call	_factorial	# call _factorial

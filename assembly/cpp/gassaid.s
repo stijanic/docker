@@ -1,5 +1,4 @@
 .section .text
-
 .global GetValueFromGAS
 
 GetValueFromGAS:

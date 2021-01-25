@@ -16,9 +16,13 @@
 # 	info registers
 # ----------------------------------------------------------------------------------------
 
-	.global	_start
+.section .data
+msg:
+	.ascii	"Hello, world!\n"
 
-	.text
+.section .text
+.global	_start
+
 _start:
 	call	_printHello
 
@@ -35,6 +39,3 @@ _printHello:
 	mov	$14, %rdx	# number of bytes
 	syscall			# invoke operating system to do the write
 	ret
-
-msg:
-	.ascii	"Hello, world!\n"

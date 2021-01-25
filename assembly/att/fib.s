@@ -8,9 +8,13 @@
 #
 # -----------------------------------------------------------------------------
 
-	.global	main
+.section .data
+format:
+	.asciz	"%20ld\n"
 
-	.text
+.section .text
+.global	main
+
 main:
 	push	%rbx		# we have to save this since we use it
 
@@ -45,6 +49,3 @@ _print:
 
 	pop	%rbx		# restore rbx before returning
 	ret
-
-format:
-	.asciz	"%20ld\n"
