@@ -8,4 +8,4 @@ if [ "$1" == "clean" ]; then
 	exit 0
 fi
 
-g++ -g gassaid.cpp gassaid.s -o gassaid && file gassaid && ./gassaid
+g++ -gstabs gassaid.cpp gassaid.s -o gassaid && file gassaid && ./gassaid

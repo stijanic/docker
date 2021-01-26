@@ -2,7 +2,7 @@
 
 .section .data
 buffer:
-	.fill 10000
+	.fill 10000	# byte is the default size
 
 .section .text
 .globl _start

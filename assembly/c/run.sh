@@ -10,6 +10,6 @@ if [ "$1" == "clean" ]; then
 	exit 0
 fi
 
-gcc -g -std=c99 -pedantic att.c -o att && file att && ./att
-gcc -g -masm=intel intel.c -o intel && file intel &&  ./intel
-gcc -g tsc.c -o tsc && file tsc && ./tsc
+gcc -gstabs -std=c99 -pedantic att.c -o att && file att && ./att
+gcc -gstabs -masm=intel intel.c -o intel && file intel &&  ./intel
+gcc -gstabs tsc.c -o tsc && file tsc && ./tsc
