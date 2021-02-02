@@ -1,6 +1,6 @@
 var http = require('http');
 
-http.get(8080, function (response) {
+http.get(process.argv[2], function (response) {
 	response.setEncoding('utf8');
 
 	response.on('error', function (data) {
