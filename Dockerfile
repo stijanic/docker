@@ -40,6 +40,8 @@ RUN \
   apt install -y python3 && \
   apt install -y python-is-python3 && \
   apt install -y python3-pip && \
+  apt install -y python3-dev && \
+  apt install -y python3-venv && \
   apt install -y nodejs && \
   apt install -y npm && \
   apt install -y clojure && \
@@ -55,6 +57,7 @@ RUN \
   apt install -y nasm && \
   apt install -y yasm && \
   apt install -y gcc-multilib
+
 
 RUN groupadd -g 1001 stijanic
 
@@ -86,4 +89,4 @@ RUN npm install
 
 RUN echo 'export GNUSTEP_MAKEFILES=/usr/lib/GNUstep/Makefiles' >> ~/.bashrc
 
-CMD ["node", "node.js/4.2.4/_Node.js/learnyounode/http-json-api-server.js", "8080"]
+CMD ["node", "javascript/_JavaScript/learnyounode/http-json-api-server.js", "8080"]
