@@ -17,11 +17,13 @@
   },
   "homepage": "https://github.com/stijanic/docker#readme",
   "dependencies": {
-    "zeromq": "5.2.0",
+    "jsforce": "1.10.0",
+    "lodash": "^4.17.20",
     "mongoose": "5.10.15",
     "mysql": "2.18.1",
     "pg": "8.3.3",
     "redis": "3.0.2",
-    "jsforce": "1.10.0"
+    "request": "^2.88.2",
+    "zeromq": "5.2.0"
   }
 }

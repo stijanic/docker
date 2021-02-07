@@ -1,11 +1,14 @@
-// tsconfig.json
+// tsconfig.json:
+// tsc --init
 // tsc test10.ts --out test10.js
 // tsc test10.ts --watch
-// package.json
+
+// package.json:
 // npm init
-// npm start
 // npm install lodash --save-dev -- add to package.json
 // npm install @types/lodash --save-dev -- add to package.json for typescript checking
+// npm start
+
 import { Person } from './test07'; // importing module
 import * as _ from 'lodash';
 

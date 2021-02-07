@@ -1,16 +1,18 @@
 {
-  "name": "typescript",
+  "name": "project",
   "version": "1.0.0",
   "description": "",
-  "main": "./target/test10.js",
+  "main": "index.js",
   "scripts": {
-    "start": "tsc --outDir ./target ./test10.ts && node ./target/test10.js",
+    "start": "tsc && node ./target/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/lodash": "^4.14.168",
-    "lodash": "^4.17.20"
+    "@types/request": "^2.48.5",
+    "lodash": "^4.17.20",
+    "request": "^2.88.2"
   }
 }
