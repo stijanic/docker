@@ -1,8 +1,7 @@
-source "https://rubygems.org"
-gem 'ffi-rzmq', "2.0.7"
-gem 'mongo', '1.5'
-gem 'mongodb', '2.1.0'
+source 'https://rubygems.org'
+gem 'ffi-rzmq', '2.0.7'
+gem 'mongo', '2.14.0'
 gem 'pg', '1.2.3'
 gem 'redis', '4.2.5'
 gem 'mysql2','0.5.3'
-gem "bson", ">= 3.0.4"
+gem 'bson', '>= 4.8.2'

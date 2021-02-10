@@ -1,29 +1,32 @@
-require 'mongo/driver'
+require 'mongo'
 
 include Mongo
 
 host = ENV['MONGO_RUBY_DRIVER_HOST'] || 'localhost'
-port = ENV['MONGO_RUBY_DRIVER_PORT'] || MongoClient::DEFAULT_PORT
+port = ENV['MONGO_RUBY_DRIVER_PORT'] || '27017'
 
 puts "Connecting to #{host}:#{port}"
-db = MongoClient.new(host, port).db('ruby-mongo-examples')
+client = Mongo::Client.new([ host+':'+port ], :database => 'test')
+db = client.database
+
 coll = db.collection('test')
 
-# Erase all records from collection, if any
-coll.remove
-
 # Insert 3 records
-3.times { |i| coll.insert({'a' => i+1}) }
+3.times { |i| coll.insert_one({'a' => i+1}) }
 
 # Collection names in database
 p db.collection_names
 
-# More information about each collection
-p db.collections_info
+# More information about collections
+p db.collections
+
+# Print documents from collection
+coll.find.each do |document|
+  p document
+end
 
 # Index information
-coll.create_index('a')
-p db.index_information('test')
+p client[:bands].indexes
 
 # Destroy the collection
 coll.drop
