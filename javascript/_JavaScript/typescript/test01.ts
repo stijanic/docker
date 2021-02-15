@@ -26,6 +26,7 @@ myArr = [1, 2];
 myArr = ['1']; // error but it transpiles
 myArr = 1; // error but it transpiles
 
+myArr = []; // back to array
 myArr.push(1);
 y = myArr.pop(); // error but it transpiles
 
