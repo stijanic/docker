@@ -1,8 +1,5 @@
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
 
 public class Lambda06 {
 	public static void main(String args[]) {
