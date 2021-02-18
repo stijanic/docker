@@ -3,17 +3,13 @@ public class Test01 {
 		MyClass<Integer, Double> object = new MyClass<Integer, Double>(10, 20.0);
 
 		object.showType();
-		object.printSquare();
+		object.printMultiple();
 	}
 }
 
 class MyClass<T extends Number, V extends Number> {
 	T t;
 	V v;
-
-	public MyClass(T t) {
-		this.t = t;
-	}
 
 	public MyClass(T t, V v) {
 		this.t = t;
@@ -25,7 +21,7 @@ class MyClass<T extends Number, V extends Number> {
 		System.out.println(v.getClass().getName());
 	}
 	
-	public void printSquare() {
+	public void printMultiple() {
 		System.out.println(t.doubleValue() * v.doubleValue());
 	}
 }
